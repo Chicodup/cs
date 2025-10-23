@@ -1,6 +1,30 @@
 {% extends "base.html" %}
+{% block title %} Головна сторінка {% endblock %}
 
 {% block content %}
-    <h1>Ласкаво просимо на наш сайт🤗!</h1>
-    <p>Це головна сторінка нашого веб-додатку🤗</p>
+<h1>Ласкаво просимо на наш сайт🤗!</h1>
+<p>Це головна сторінка нашого готелю🤗</p>
+<div class="rooms-list">
+    {% for room in rooms %}
+        <p>{{room.title}} - {{room.price}} грн/добу</p>
+           <div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+      </li>
+    </ul>
+  </div>
+  {% if room.image %}
+  <img src="{{room.image.url}}" class="card-img-top" alt="...">
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">Номер {{room.title}}</h5>
+    <p class="card-text">{{room.price}} грн/добу</p>
+    <p class="card-text">Опис: {{room.description}}</p>
+    <a href="#" class="btn btn-primary">Тут кімната Леді Гаги</a>
+  </div>
+</div>
+    {% endfor %}
+</div>
+ 
 {% endblock %}
