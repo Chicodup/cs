@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1>Ласкаво просимо на наш сайт🤗!</h1>
-<p>Це головна сторінка нашого готелю🤗</p>
+<p>Це НЕ головна сторінка нашого готелю🤗</p>
 <div class="rooms-list">
     {% for room in rooms %}
            <div class="card text-center" style ="max-width: 18rem;">
@@ -21,7 +21,7 @@
     <h5 class="card-title">Номер {{room.title}}</h5>
     <p class="card-text">{{room.price}} грн/добу</p>
     <p class="card-text">Опис: {{room.description}}</p>
-    <a href="#" class="btn btn-primary">Тут кімната Леді Гаги</a>
+    <a href="{% url 'room_page' room.id %}" class="btn btn-primary">Тут кімната Леді Гаги</a>
   </div>
 </div>
     {% endfor %}
